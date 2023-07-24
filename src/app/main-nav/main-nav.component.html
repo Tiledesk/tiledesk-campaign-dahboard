@@ -1,0 +1,48 @@
+<mat-drawer-container class="drawer-container" autosize>
+    <mat-drawer #drawer mode="side" opened style="height: 100%;">
+      
+        <div class="list-container">
+
+            <div class="list-item project-item" style="justify-content: space-between;">
+                    <p style="margin-bottom: 0px; font-weight: bold;">Tiledesk Website</p>
+                    <img src="../../assets/img/tiledesk_v14.png" alt="Tiledesk Logo" class="tiledesk-logo">
+            </div>
+
+            <hr class="divider">
+
+            <div class="list-item" [routerLink]="['/dashboard']" routerLinkActive="router-link-active">
+                <span class="material-icons-round">home</span>
+                <p class="list-item-title">Dashboard</p>
+            </div>
+
+            <div class="list-item" [routerLink]="['/broadcast']" routerLinkActive="router-link-active">
+                <span class="material-icons-round">campaign</span>
+                <p class="list-item-title">Broadcast</p>
+            </div>
+
+            <hr style="border: none;">
+
+            <div class="list-item" [routerLink]="['/contacts']" routerLinkActive="router-link-active">
+                <span class="material-icons-round">people</span>
+                <p class="list-item-title">Contacts</p>
+            </div>
+
+            <div class="list-item" [routerLink]="['/segments']" routerLinkActive="router-link-active">
+                <span class="material-icons-round">supervised_user_circle</span>
+                <p class="list-item-title">Segments</p>
+            </div>
+
+            <hr style="border: none;">
+
+            <div class="list-item" [routerLink]="['/settings']" routerLinkActive="router-link-active">
+                <span class="material-icons-round">settings</span>
+                <p class="list-item-title">Settings</p>
+            </div>
+        </div>
+    </mat-drawer>
+  
+    <mat-drawer-content>
+        <ng-content></ng-content>
+    </mat-drawer-content>
+  
+  </mat-drawer-container>

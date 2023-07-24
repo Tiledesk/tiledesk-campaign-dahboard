@@ -1,0 +1,116 @@
+@import "../../assets/scss/variable";
+
+.search-box {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.filters-box {
+    border-radius: 4px;
+    background-color: white;
+    padding: 4px 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filters-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+table {
+    margin-top: 20px;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+    background-color: white;
+}
+
+tr {
+    text-align: center;
+    color: #666666
+}
+
+.broadcasts-container {
+    width: 100%;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px 0px;
+}
+
+.broadcast-title {
+    color: var(--custom-quaternary);
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.broadcast {
+    width: 100%;
+    display: flex;
+    flex-direction: row;   
+}
+
+.broadcast-channel {
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.broadcast-detail {
+    width: 50%;
+}
+
+.broadcast-status {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    .status-tip {
+        padding: 4px 6px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+
+        .material-icons-outlined {
+            font-weight: bold;
+            font-size: 14px;
+            margin-right: 4px;
+        }
+    }
+
+    .status-tip-sent {
+        color: rgb(60, 134, 17);;
+        background-color: rgba(111, 216, 55, 0.54);
+    }
+
+    .status-tip-draft {
+        background-color: rgba(205, 205, 205, 0.546);
+    }
+
+    .status-tip-scheduled {
+        color: rgb(26, 124, 194);
+        background-color: rgba(134, 175, 204, 0.68);
+    }
+
+
+
+
+}
+
+.broadcast-options {
+    display: flex;
+    width: 30%;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-right: 10px;
+}

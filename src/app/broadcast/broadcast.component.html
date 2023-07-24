@@ -1,0 +1,129 @@
+<div class="content">
+
+    <div class="inner-content">
+
+
+        <div class="content-header">
+            <p class="title">Broadcasts</p>
+            <button mat-raised-button class="btn primary-btn" (click)="createBroadcast()">Create Broadcast</button>
+        </div>
+
+
+        <div class="search-box">
+            <input class="custom-input" type="text" placeholder="Search by name">
+            <button mat-raised-button class="btn primary-btn small-btn">Search</button>
+        </div>
+
+        <div class="filters-box">
+            <p class="subtitle">Filters</p>
+
+            <div class="filters-list">
+                <mat-form-field appearance="outline">
+                    <mat-select [(value)]="selectedChannel" name="channel">
+                        <mat-option *ngFor="let channel of channels" [value]="channel.value">
+                            {{channel.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-select [(value)]="selectedStatus" name="channel">
+                        <mat-option *ngFor="let status of statuses" [value]="status.value">
+                            {{status.viewValue}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-date-range-input [rangePicker]="picker">
+                        <input matStartDate formControlName="start" placeholder="Start date" disabled>
+                        <input matEndDate formControlName="end" placeholder="End date" disabled>
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="picker" [disableRipple]="true"></mat-datepicker-toggle>
+                    <mat-date-range-picker #picker disabled="false" color="tertiary"></mat-date-range-picker>
+
+                    <mat-error *ngIf="range.controls.start.hasError('matStartDateInvalid')">Invalid start
+                        date</mat-error>
+                    <mat-error *ngIf="range.controls.end.hasError('matEndDateInvalid')">Invalid end date</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <!-- <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" style="text-align: left;">Broadcast name</th>
+                    <th scope="col">Scheduled</th>
+                    <th scope="col">Successfull / Read / Replied</th>
+                    <th scope="col">Recipients</th>
+                    <th scope="col">Failed</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td scope="row" style="text-align: left;">TestBroadcast1</td>
+                    <td>2022-06-01 11:02 PM</td>
+                    <td> <span style="color: green;">100% / </span><span style="color: green">100% / </span><span
+                            style="color: orange;">50%</span></td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>Completed</td>
+                    <td><span class="material-symbols-outlined action">monitoring</span></td>
+
+                </tr>
+                <tr>
+                    <td scope="row" style="text-align: left;">TestBroadcast2</td>
+                    <td>2022-06-01 11:02 PM</td>
+                    <td> <span style="color: green;">100% / </span><span style="color: orange">50% / </span><span
+                            style="color: red;">0%</span></td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>Completed</td>
+                    <td><span class="material-symbols-outlined action">monitoring</span></td>
+                </tr>
+                <tr>
+                    <td scope="row" style="text-align: left;">TestBroadcast3</td>
+                    <td>2022-06-01 11:02 PM</td>
+                    <td> <span style="color: green;">100% / </span><span style="color: green">80% / </span><span
+                            style="color: orange;">50%</span></td>
+                    <td>2</td>
+                    <td>0</td>
+                    <td>Completed</td>
+                    <td><span class="material-symbols-outlined action">monitoring</span></td>
+                </tr>
+            </tbody>
+        </table> -->
+
+        <!-- // ngfor here -->
+        <div class="broadcasts-container">
+            <div class="broadcast">
+                <div class="broadcast-channel">
+                    <img src="../../assets/img/whatsapp-logo.png" width="24px" height="auto" alt="Whatsapp Logo">
+                </div>
+                <div class="broadcast-detail">
+                    <p class="broadcast-title">Broadcast title</p>
+                    <p>Schedule on </p>
+                    <p>Crated on</p>
+                </div>
+                <div class="broadcast-status">
+                    <div class="status-tip status-tip-sent">
+                        <span class="material-icons-outlined">
+                            fiber_manual_record
+                        </span>
+                        Scheduled
+                    </div>
+                </div>
+                <div class="broadcast-options">
+                    <button mat-raised-button class="btn quaternary-btn" style="margin-right: 6px;">Edit</button>
+                    <button mat-raised-button class="btn quaternary-btn"><span class="material-icons-outlined">
+                            more_horiz
+                        </span></button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
